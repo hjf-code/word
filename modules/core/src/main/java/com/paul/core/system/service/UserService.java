@@ -10,4 +10,12 @@ import com.paul.core.system.entity.UserEntity;
  * @since 2019/3/28 20:05
  */
 public interface UserService extends BaseService<UserEntity> {
+
+    /**
+     * 通过用户名查询用户
+     *
+     * @param username 用户名
+     * @return com.paul.core.system.entity.UserEntity
+     */
+    UserEntity getObjectByUsername(String username);
 }

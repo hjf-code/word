@@ -15,12 +15,7 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<UserEntity, UserDao> implements UserService {
 
-    /**
-     * 通过用户名查询用户
-     *
-     * @param username 用户名
-     * @return com.paul.core.system.entity.UserEntity
-     */
+    @Override
     public UserEntity getObjectByUsername(String username) {
 
         return dao.getObjectByUsername(username);

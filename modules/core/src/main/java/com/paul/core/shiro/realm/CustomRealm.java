@@ -1,6 +1,7 @@
 package com.paul.core.shiro.realm;
 
 import com.paul.core.system.entity.UserEntity;
+import com.paul.core.system.service.UserService;
 import com.paul.core.system.service.impl.UserServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
@@ -29,7 +30,7 @@ import java.util.Objects;
 public class CustomRealm extends AuthorizingRealm {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     /**
      * 获得身份认证, 登录时先要认证身份

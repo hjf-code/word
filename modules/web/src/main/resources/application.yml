@@ -1,11 +1,6 @@
 # 此配置文件会覆盖上面所依赖的其他项目的配置文件, 所以配置以此文件为准
 
 # 公共配置
-#logging:
-#  level:
-#    # 指定日志等级
-#    root: info
-#    com.paul.mudules: debug
 server:
   # 指定端口号
   port: 8080
@@ -20,8 +15,8 @@ mybatis:
 spring:
   profiles:
     # 激活哪一个环境的配置文件
-#    active: dev
-    active: pro
+    active: dev
+#    active: pro
 
 ---
 # 开发环境
@@ -30,7 +25,8 @@ spring:
   schedule:
     corn:
       # 每天23:55检查单词是否背完
-      word-check: 0 55 23 * * ?
+#      word-check: 0 55 23 * * ?
+      word-check: 0/1 * * * * ?
   # 是否全局跨域
   all-cors: false
   shiro:

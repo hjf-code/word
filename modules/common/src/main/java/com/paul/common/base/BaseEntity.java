@@ -13,7 +13,7 @@ import static com.paul.common.constant.DateConstant.DEFAULT_DATE_PATTERN;
  * 规定:
  * 1. 该类及其子类的所有属性(除了serialVersionUID属性)需要满足两个条件:
  * (1) 必须在数据库里有对应字段(符合驼峰转换), 否则使用Dao的时候要重写Dao中相应接口
- * (2) 不能有基本类型, 必须是包装类, 否则会被插入/更新为默认值(int默认值为0, boolean默认值为false)
+ * (2) 不能有基本类型, 必须是包装类(这也是阿里Java规范), 否则会被插入/更新为默认值(int默认值为0, boolean默认值为false)
  * 2. 该类与其子类属性名不能重复(除了serialVersionUID属性)
  * 3. 实体类的类名命名规则为: 表名转大驼峰, 然后追加Entity, 例: 表名为test_user, 则实体类名为TestUserEntity
  *
