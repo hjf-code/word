@@ -93,7 +93,7 @@ public class WordServiceImpl extends BaseServiceImpl<WordEntity, WordDao> implem
 
         String oldWord = dao.getObject(entity.getId()).getWord();
         String newWord = entity.getWord();
-        if (!oldWord.equals(newWord)) {
+        if (!Objects.equals(oldWord, newWord)) {
             WordEntity word = dao.getObjectByWord(entity.getWord());
             if (word != null) {
                 return R.err("数据库已有该单词！");

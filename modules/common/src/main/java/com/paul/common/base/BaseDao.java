@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static com.paul.common.constant.SqlConstant.*;
 import static com.paul.common.util.SqlUtils.*;
@@ -228,7 +229,7 @@ public interface BaseDao<E extends BaseEntity> {
         private void addFields(Field[] fields) {
 
             for (Field field : fields) {
-                if (!"serialVersionUID".equals(field.getName())) {
+                if (!Objects.equals("serialVersionUID", field.getName())) {
                     field.setAccessible(true); this.fields.add(field);
                     selectColumns.append(SqlUtils.toUnderline(field.getName())).append("`, `");
                 }
@@ -245,7 +246,7 @@ public interface BaseDao<E extends BaseEntity> {
         private SQL getInsertOrCreateSql(E entity, String type, String entityName) {
 
             return new SQL() {{
-                if (UPDATE.equals(type)) {
+                if (Objects.equals(UPDATE, type)) {
                     UPDATE(tableName);
                 } else {
                     INSERT_INTO(tableName);
@@ -255,7 +256,7 @@ public interface BaseDao<E extends BaseEntity> {
                         String fieldName = field.getName();
                         // 获取字段值, 只要不是NULL都会插入/更新
                         if (field.get(entity) != null) {
-                            if (UPDATE.equals(type)) {
+                            if (Objects.equals(UPDATE, type)) {
                                 SET("`" + SqlUtils.toUnderline(fieldName) + "` = #{" +
                                     (entityName == null ? "" : (entityName + ".")) + fieldName +
                                     "}");

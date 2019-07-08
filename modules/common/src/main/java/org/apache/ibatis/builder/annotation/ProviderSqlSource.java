@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * 修改行: 54~72 (注: 该版本为MyBatis3.4.6)
@@ -72,7 +73,8 @@ public class ProviderSqlSource implements SqlSource {
             // 1. 存在外部类/接口
             // 2. 外部类与mapperType(实际的DAO接口, 即BaseDao的子接口)不是同一个类/接口
             // 3. 外部类是mapperType的父类/接口(isAssignableFrom无法判断出到底是父类/接口还是本身)
-            if (declaringClass != null && !declaringClass.getName().equals(mapperType.getName()) &&
+            if (declaringClass != null &&
+                !Objects.equals(declaringClass.getName(), mapperType.getName()) &&
                 declaringClass.isAssignableFrom(mapperType)) {
                 Class<?>[] declaredClasses = mapperType.getDeclaredClasses();
                 // 如果存在内部类
@@ -86,7 +88,7 @@ public class ProviderSqlSource implements SqlSource {
             providerMethodName = (String) provider.getClass().getMethod("method").invoke(provider);
 
             for (Method m : this.providerType.getMethods()) {
-                if (providerMethodName.equals(m.getName()) &&
+                if (Objects.equals(providerMethodName, m.getName()) &&
                     CharSequence.class.isAssignableFrom(m.getReturnType())) {
                     if (providerMethod != null) {
                         throw new BuilderException(

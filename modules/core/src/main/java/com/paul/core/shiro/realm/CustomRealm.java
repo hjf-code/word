@@ -11,6 +11,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Objects;
+
 /**
  * 自定义Realm
  * 身份认证(authentication)和授权信息(authorization)松耦合的原因:
@@ -52,7 +54,7 @@ public class CustomRealm extends AuthorizingRealm {
             log.info("帐号不存在! ");
             throw new UnknownAccountException();
         }
-        if (Boolean.TRUE.equals(userEntity.getLocked())) {
+        if (Objects.equals(Boolean.TRUE, userEntity.getLocked())) {
             log.info("用户" + userEntity.getUsername() + "的账号被锁定! ");
             throw new LockedAccountException();
         }

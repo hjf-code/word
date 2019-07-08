@@ -354,7 +354,7 @@ public class JSONSerializer extends SerializeFilterable {
 
         if (object instanceof byte[]) {
             byte[] bytes = (byte[]) object;
-            if ("gzip".equals(format) || "gzip,base64".equals(format)) {
+            if (Objects.equals("gzip", format) || Objects.equals("gzip,base64", format)) {
                 GZIPOutputStream gzipOut = null; try {
                     ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
                     if (bytes.length < 512) {
@@ -368,7 +368,7 @@ public class JSONSerializer extends SerializeFilterable {
                 } finally {
                     IOUtils.close(gzipOut);
                 }
-            } else if ("hex".equals(format)) {
+            } else if (Objects.equals("hex", format)) {
                 out.writeHex(bytes);
             } else {
                 out.writeByteArray(bytes);
