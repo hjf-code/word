@@ -3,7 +3,7 @@ package com.paul.common.util;
 /**
  * 字符串操作工具类, 继承org.springframework.util.StringUtils里的方法
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/25 15:51
  */
 public class StringUtils extends org.springframework.util.StringUtils {

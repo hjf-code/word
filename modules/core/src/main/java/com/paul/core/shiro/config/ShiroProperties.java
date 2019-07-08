@@ -11,7 +11,7 @@ import java.util.List;
  * 读取配置文件, 某参数若不需要重复使用, 则直接@Value也方便
  * 用这个类比@Value好的还有一点: 可以轻松读取List和Map类型的配置
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/23 14:13
  */
 @EnableConfigurationProperties

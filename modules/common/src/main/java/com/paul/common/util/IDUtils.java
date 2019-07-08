@@ -5,7 +5,7 @@ import java.util.UUID;
 /**
  * 生成32位UUID
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/21 20:55
  */
 public class IDUtils {

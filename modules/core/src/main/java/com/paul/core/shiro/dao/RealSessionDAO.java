@@ -8,7 +8,7 @@ import static com.paul.common.constant.SqlConstant.*;
 /**
  * 真正Shiro会话的DAO, 这是个不继承BaseDao的例子
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/21 22:32
  */
 @Mapper

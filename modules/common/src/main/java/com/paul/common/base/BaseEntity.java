@@ -17,7 +17,7 @@ import static com.paul.common.constant.DateConstant.DEFAULT_DATE_PATTERN;
  * 2. 该类与其子类属性名不能重复(除了serialVersionUID属性)
  * 3. 实体类的类名命名规则为: 表名转大驼峰, 然后追加Entity, 例: 表名为test_user, 则实体类名为TestUserEntity
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 22:27
  */
 @Data

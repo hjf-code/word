@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 自定义异常
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/28 11:27
  */
 @Data

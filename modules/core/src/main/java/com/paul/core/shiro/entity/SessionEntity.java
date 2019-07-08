@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * shiro会话
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/21 22:57
  */
 @Data

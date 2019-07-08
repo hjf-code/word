@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * 系统用户
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/18 16:51
  */
 @Data

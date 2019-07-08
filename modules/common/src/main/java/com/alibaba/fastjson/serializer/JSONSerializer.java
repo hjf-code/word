@@ -33,7 +33,7 @@ import java.util.zip.GZIPOutputStream;
  * 重写了FastJSON的源码在writeWithFormat方法(325~330行)处做修改. 在fastJsonHttpMessageConverters()中
  * 定义了全局日期格式化, 但是会覆盖@JSONField的日期格式化 这里修改后, @JSONField的日期格式化会覆盖全局日期格式化.
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 22:27
  */
 public class JSONSerializer extends SerializeFilterable {

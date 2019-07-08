@@ -22,7 +22,7 @@ import java.util.Objects;
  * 但是如果BaseDao的子接口TestDao也有一个内部类, 则这里的type = Provider.class优先指向这个内部类
  * 这样做的目的: 任何Java注解里不能有变量, 但是不同的Dao子接口, 其表名和字段名等一定是不同的(即变量), 这样做就间接赋予了Java注解里可以有变量的功能
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/28 20:04
  */
 public class ProviderSqlSource implements SqlSource {

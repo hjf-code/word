@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * Shiro配置
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/20 23:22
  */
 @Configuration

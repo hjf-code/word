@@ -18,7 +18,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 /**
  * 默认首页, 静态资源访问, 全局跨域, 以及FastJson转换配置
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/6/5 13:00
  */
 @Configuration

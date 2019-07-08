@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * 参数, 除了继承自HashMap<String, Object>(方便编码), 还有分页参数(方便分页)
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/26 12:53
  */
 @Getter

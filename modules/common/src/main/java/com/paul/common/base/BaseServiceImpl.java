@@ -14,7 +14,7 @@ import java.util.List;
  * 某类型的Service实现类最好只调用对应类型的Dao实现类, 不要调用其他类型的Dao实现类
  * 若需要查询其他类型的数据, 可以通过这个类型的Service实现类来调用
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/24 13:50
  */
 public abstract class BaseServiceImpl<E extends BaseEntity, D extends BaseDao<E>> {

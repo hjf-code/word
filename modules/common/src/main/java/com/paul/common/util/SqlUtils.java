@@ -12,7 +12,7 @@ import static com.paul.common.constant.StringConstant.*;
 /**
  * SQL中的关键字, 以及工具类
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/28 19:37
  */
 public interface SqlUtils {

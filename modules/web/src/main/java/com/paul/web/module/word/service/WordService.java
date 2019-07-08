@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 /**
  * 单词
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/28 20:05
  */
 public interface WordService extends BaseService<WordEntity> {

@@ -15,7 +15,7 @@ import java.io.Serializable;
  * 对于分布式系统, 一般都牵扯到Session共享问题, 而想实现Session共享, 就要实现Session的持久化操作,
  * 即将内存中的Session持久化至缓存数据库.
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/21 20:41
  */
 @Component

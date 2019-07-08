@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * 无需参数获得Request和Response
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/20 21:04
  */
 public class HttpUtils {

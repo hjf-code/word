@@ -12,7 +12,7 @@ import static com.paul.core.shiro.config.ShiroConfig.*;
 /**
  * 带有重试密码次数限制的凭证匹配器
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/20 23:22
  */
 public class PasswordHelper {

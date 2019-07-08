@@ -21,7 +21,7 @@ import static com.paul.common.util.SqlUtils.*;
  * 子接口的内部类要继承该类的Provider类
  * 若需要重写时, 可以重写BaseDao里的方法, 也可以只重写BaseDao.Provider里的方法
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2018/12/28 17:11
  */
 public interface BaseDao<E extends BaseEntity> {

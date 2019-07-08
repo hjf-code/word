@@ -10,7 +10,7 @@ import static com.paul.common.constant.SqlConstant.*;
 /**
  * 系统用户DAO
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/24 13:39
  */
 @Mapper

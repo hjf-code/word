@@ -18,7 +18,7 @@ import static com.paul.common.util.SqlUtils.notDeleted;
 /**
  * 单词
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/28 20:04
  */
 @Mapper

@@ -23,7 +23,7 @@ import java.util.Objects;
  * 不是特别重要的功能(如主页), 可以将过滤器级别设置为user, 已认证身份或"记住我"的都可以访问.
  * 重要的功能(如支付), 可以将过滤器级别设置为authc, 访问功能前必须登录.
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/18 16:43
  */
 @Slf4j

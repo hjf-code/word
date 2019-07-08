@@ -17,7 +17,7 @@ import java.util.Map;
  * data: JSON.stringify({name: "张三", age: 12}),
  * contentType: "application/json; charset=utf-8",
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 17:23
  */
 public abstract class BaseController<E extends BaseEntity, S extends BaseService<E>> {
@@ -144,7 +144,7 @@ public abstract class BaseController<E extends BaseEntity, S extends BaseService
 /**
  * 批量更新的实体类, 解决@RequestBody只能传一个对象的问题
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 17:23
  */
 @Data

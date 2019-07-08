@@ -16,7 +16,7 @@ import static com.paul.common.constant.WebConstant.TEXT_HTML_UTF8;
  * 通用过滤器, 用来设置编码, 响应内容类型
  * Order(1)主键表示执行顺序, 值越小, 越先执行
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 19:54
  */
 @Order(1)

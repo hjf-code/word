@@ -14,7 +14,7 @@ import static com.paul.common.constant.WebConstant.APPLICATION_JSON_UTF8;
 /**
  * 异常处理器, 捕获运行时异常
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 19:41
  */
 @Slf4j

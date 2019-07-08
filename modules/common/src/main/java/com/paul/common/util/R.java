@@ -8,7 +8,7 @@ import java.util.Map;
  * 前后端通信时一般0或200为正常, 1或500以及其他为异常
  * 数据库中字段的值一般0为false, 1为true
  *
- * @author paul paul@gmail.com
+ * @author paul paulandcode@gmail.com
  * @since 2019/3/27 17:23
  */
 public class R extends HashMap<String, Object> {
