@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 描述这个POM文件是遵从哪个版本的项目描述符 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--================== 项目信息 ==================-->
+    <!-- 项目或者组织的唯一标志 -->
+    <groupId>com.paul</groupId>
+    <!-- 项目的通用名称 -->
+    <artifactId>word</artifactId>
+    <!-- 打包的机制,如war,jar,pom,maven-plugin,ejb,ear,rar,par -->
+    <packaging>pom</packaging>
+    <!-- 项目版本 -->
+    <version>6.6.6</version>
+    <!-- 项目的名称,Maven产生的文档用 -->
+    <name>word</name>
+    <!-- 哪个网站可以找到这个项目,提示如果 Maven资源列表没有,可以直接上该网站寻找,Maven产生的文档用 -->
+    <url>https://www.paulandcode.com</url>
+    <!-- 项目描述,Maven产生的文档用 -->
+    <description>整个项目的根, 指定项目的各个模块.</description>
+    <!-- 创始年份 -->
+    <inceptionYear>2019-Now</inceptionYear>
+
+    <!--================== 指定项目所继承的父POM(Spring Boot项目) ==================-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <!-- 设定一个空值将始终从仓库中获取, 不从本地路径获取 -->
+        <relativePath/>
+    </parent>
+
+    <!--================== 指定项目的各个模块 ==================-->
+    <modules>
+        <module>modules/common</module>
+        <module>modules/core</module>
+        <module>modules/web</module>
+    </modules>
+
+    <!--================== 许可证书 ==================-->
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <!--================== 开发者信息 ==================-->
+    <developers>
+        <developer>
+            <id>Paul</id>
+            <name>HuangJianFeng(phone: 18902022392)</name>
+            <email>paulandcode@gmail.com</email>
+            <roles>
+                <role>Project Leader</role>
+                <role>Project Architect</role>
+                <role>Project Manager</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <!--================== 组织机构信息 ==================-->
+    <organization>
+        <name>paul</name>
+        <url>https://www.paulandcode.com</url>
+    </organization>
+
+    <!--================== JAR包镜像 ==================-->
+    <repositories>
+        <repository>
+            <id>aLiYun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <properties>
+        <!-- environment setting -->
+        <maven.test.skip>true</maven.test.skip>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+</project>

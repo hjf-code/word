@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="shiroEhCache" updateCheck="false">
+
+    <!-- 当需要磁盘存储时, 打开此标签, path属性用来指定存储位置, 可以配置的目录有: user.home(用户的home目录),
+        user.dir(用户当前的工作目录), java.io.tmpdir(默认的临时目录), ehcache.disk.store.dir(ehcache的配置目录),
+          绝对路径(如: d:/ehcache), 子目录的话可以这样指定: user.home/ehcache -->
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- name: Cache的名称,必须是唯一的(ehcache会把这个cache放到HashMap里) -->
+    <!-- maxElementsInMemory: 内存中保持的对象数量 -->
+    <!-- maxElementsOnDisk: diskStore中保持的对象数量, 默认值为0, 表示不限制 -->
+    <!-- eternal: 是否是永恒数据, 如果是, 则它的超时设置会被忽略 -->
+    <!-- overflowToDisk: 如果内存中数据数量超过maxElementsInMemory限制, 是否要缓存到磁盘上 -->
+    <!-- timeToIdleSeconds: 对象空闲时间, 指对象在多长时间没有被访问就会失效.只对eternal为false的有效.默认值0, 表示一直可以访问 -->
+    <!-- timeToLiveSeconds: 对象存活时间, 指对象从创建到失效所需要的时间.只对eternal为false的有效.默认值0, 表示一直可以访问 -->
+    <!-- diskPersistent:是否在磁盘上持久化.指重启jvm后, 数据是否有效.默认为false -->
+    <!-- diskExpiryThreadIntervalSeconds: 对象检测线程运行时间间隔.标识对象状态的线程多长时间运行一次 -->
+    <!-- diskSpoolBufferSizeMB: diskStore使用的磁盘大小, 默认值30MB.每个cache使用各自的diskStore -->
+    <!-- memoryStoreEvictionPolicy: 如果内存中数据超过内存限制, 向磁盘缓存时的策略.默认值LRU, 可选FIFO, LFU -->
+    <!-- statistics: 是否收集统计信息, 如果需要监控缓存使用情况, 应该打开这个选项. 默认为关闭(统计会影响性能) -->
+
+    <!--================== 允许重试密码次数限制缓存, 锁定1分钟 ==================-->
+    <cache name="passwordRetryCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="60"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <!--================== 身份认证的缓存 ==================-->
+    <cache name="authenticationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <!--================== 授权信息的缓存 ==================-->
+    <cache name="authorizationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <!--================== Session的缓存 ==================-->
+    <cache name="activeSessionCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+</ehcache>

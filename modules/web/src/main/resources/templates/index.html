@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>猪猪爱背单词</title>
+    <link rel="stylesheet" href="/lib/layui/css/layui.css">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+</head>
+<!--<body style="background-color: #ffffd4">-->
+<body style="background:url(/img/c.jpg) no-repeat;">
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="progress">
+                <div class="progress-bar bg-secondary" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100" id="progress0">
+                </div>
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100" id="progress4">
+                </div>
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100" id="progress1">
+                </div>
+                <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100" id="progress2">
+                </div>
+                <div class="progress-bar bg-success" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100" id="progress3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+        <div class="col-12">
+            <div class="card" style="border-width: 5px;" id="card">
+                <div class="card-header text-center" style="border-width: 5px;">
+                    <h1 id="word">nice</h1>
+                </div>
+                <div class="card-body" id="card-body" style="border-width: 5px; font-weight:bold;">
+                    <h5 class="card-subtitle mb-2 text-muted text-right" id="sound">[naɪs]</h5>
+                    <h1 class="card-title text-center" id="translation">干得漂亮！</h1>
+                    <p class="card-text" id="remark">No pains no gains! </p>
+                </div>
+                <div class="card-footer bg-transparent text-right" id="card-footer"
+                     style="border-width: 5px;">
+                    <small class="text-muted" id="startDate">666</small>，
+                    <small class="text-muted" id="dayCount">666</small>，
+                    <small class="text-muted" id="time">666</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-6" id="notKnow" style="display: none">
+            <button type="button" class="btn btn-primary" style="height: 8rem;">Not Know</button>
+        </div>
+        <div class="col-6" id="know" style="display: none">
+            <button type="button" class="btn btn-primary" style="height: 8rem;">Know</button>
+        </div>
+        <div class="col-12" style="display: none" id="next">
+            <button type="button" class="btn btn-primary" style="height: 8rem;">Next</button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col" id="insert">
+            <button type="button" class="btn btn-success">Add</button>
+        </div>
+        <div class="col-4" id="update" style="display: none">
+            <button type="button" class="btn btn-warning">Update</button>
+        </div>
+        <div class="col-4" id="delete" style="display: none">
+            <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+</div>
+<form id="addOrEdit" style="display: none" class="layui-form layui-form-pane"
+      lay-filter="formWord">
+    <div class="layui-form-item" style="display: none">
+        <div class="layui-input-block">
+            <input id="id" type="hidden" name="id" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Word</label>
+        <div class="layui-input-block">
+            <input type="text" name="word" lay-verify="required" placeholder="Word"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Sound</label>
+        <div class="layui-input-block">
+            <input type="text" name="sound" placeholder="Sound"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Trans</label>
+        <div class="layui-input-block">
+            <input type="text" name="translation" lay-verify="required" placeholder="Trans"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">Remark</label>
+        <div class="layui-input-block">
+            <textarea name="remark" placeholder="Remark" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <button type="submit" lay-submit lay-filter="submitBtn" class="btn btn-primary">Submit</button>
+    <div style="height: 1rem;"></div>
+    <button type="reset" class="btn btn-secondary" id="restButton">Reset</button>
+</form>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="/lib/layui/layui.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

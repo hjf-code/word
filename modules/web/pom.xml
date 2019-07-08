@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 描述这个POM文件是遵从哪个版本的项目描述符 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--================== 项目信息 ==================-->
+    <artifactId>pig-web</artifactId>
+    <packaging>jar</packaging>
+    <name>pig-web</name>
+    <description>代码生成的web项目.</description>
+
+    <!--================== 指定项目所继承的父POM ==================-->
+    <parent>
+        <groupId>com.paul</groupId>
+        <artifactId>word</artifactId>
+        <version>6.6.6</version>
+        <!-- 指定父项目的POM文件路径 -->
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <!-- Core -->
+        <dependency>
+            <groupId>com.paul</groupId>
+            <artifactId>pig-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- html跳转 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- spring boot 的maven打包插件, 打包后, 使用 java -jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <!-- 打包的项目名 -->
+        <finalName>word</finalName>
+    </build>
+</project>

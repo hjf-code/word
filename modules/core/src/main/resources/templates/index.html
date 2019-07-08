@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<button onclick="create();">插入单个</button>
+<br><br>
+<button onclick="createBatch();">插入多个</button>
+<br><br>
+<button onclick="deleteById();">根据主键删除单个, 逻辑删除</button>
+<br><br>
+<button onclick="deleteByIds();">根据主键删除多个, 逻辑删除</button>
+<br><br>
+<button onclick="updateById();">根据主键更新单个, 主键必须传</button>
+<br><br>
+<button onclick="updateByIds();">根据主键更新多个, 主键必须传</button>
+<br><br>
+<button onclick="info();">根据主键查询单个</button>
+<br><br>
+<button onclick="selectByIds();">根据主键查询多个</button>
+<br><br>
+<button onclick="list();">根据参数查询列表</button>
+<br><br>
+<script>
+    var id1 = "0ace87f51da24d0481c89d22b61e1a24";
+    var id2 = "a508bfa3aad84dc1ab52103bd9155bc0";
+
+    function create() {
+        $.ajax({
+            url: "test/create",
+            type: "POST",
+            data: JSON.stringify({carId: "火遁"}),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function createBatch() {
+        $.ajax({
+            url: "test/createBatch",
+            type: "POST",
+            data: JSON.stringify([{carId: "火遁"},
+                {carId: "水遁"},
+                {carId: "土遁"}]),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function deleteById() {
+        $.ajax({
+            url: "test/delete/" + id1,
+            type: "DELETE",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function deleteByIds() {
+        $.ajax({
+            url: "test/deleteByIds/" + id1 + "," + id2,
+            type: "DELETE",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function updateById() {
+        $.ajax({
+            url: "test/updateById",
+            type: "PUT",
+            data: JSON.stringify({
+                id: id1,
+                carId: "火遁"
+            }),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function updateByIds() {
+        $.ajax({
+            url: "test/updateByIds",
+            type: "PUT",
+            data: JSON.stringify({
+                entity: {
+                    carId: "火遁"
+                },
+                ids: [id1, id2]
+            }),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function info() {
+        $.ajax({
+            url: "test/info/" + id1,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function selectByIds() {
+        $.ajax({
+            url: "test/selectByIds/" + id1 + "," + id2,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
+    function list() {
+        $.ajax({
+            url: "test/list/1/10",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<button onclick="create();">测试</button>
+<script>
+    function create() {
+        $.ajax({
+            url: "/sysuser/login",
+            type: "POST",
+            data: {username: "北区", password: "北区"},
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+</html>
