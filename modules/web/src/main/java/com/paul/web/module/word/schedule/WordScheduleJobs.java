@@ -26,10 +26,16 @@ import java.util.concurrent.BlockingQueue;
 @Component
 public class WordScheduleJobs {
 
-    private final WordService wordService;
+    private WordService wordService;
 
-    private final WordDao wordDao;
+    private WordDao wordDao;
 
+    /**
+     * Spring Boot的定时任务中, 无法直接注入Bean, 需要这样间接注入
+     *
+     * @param wordService 要注入的Bean
+     * @param wordDao 要注入的Bean
+     */
     @Autowired
     public WordScheduleJobs(WordService wordService, WordDao wordDao) {
 
