@@ -47,7 +47,7 @@ public class CustomSessionDao extends EnterpriseCacheSessionDAO {
     protected org.apache.shiro.session.Session doReadSession(Serializable sessionId) {
 
         return JSON.parseObject(realSessionDAO.selectById(sessionId.toString()).getSession(),
-                                org.apache.shiro.session.Session.class);
+            org.apache.shiro.session.Session.class);
     }
 
     @Override

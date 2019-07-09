@@ -41,12 +41,12 @@ public class PasswordHelper {
                     salt = byteSource.toHex();
                     newPassword =
                         new SimpleHash(HASH_ALGORITHM_NAME, password, ByteSource.Util.bytes(salt),
-                                       HASH_ITERATIONS).toHex();
+                            HASH_ITERATIONS).toHex();
                 } else {
                     salt = byteSource.toBase64();
                     newPassword =
                         new SimpleHash(HASH_ALGORITHM_NAME, password, ByteSource.Util.bytes(salt),
-                                       HASH_ITERATIONS).toBase64();
+                            HASH_ITERATIONS).toBase64();
                 }
                 userEntity.setSalt(salt);
                 userEntity.setPassword(newPassword);

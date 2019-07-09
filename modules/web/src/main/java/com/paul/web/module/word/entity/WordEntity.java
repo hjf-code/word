@@ -48,10 +48,10 @@ public class WordEntity extends BaseEntity {
     public String toString() {
 
         return "WordEntity{" + super.toString() +
-               "word='" + word + '\'' +
-               ", sound='" + sound + '\'' +
-               ", translation='" + translation + '\'' +
-               ", schedule='" + schedule + '\'' +
-               '}';
+            "word='" + word + '\'' +
+            ", sound='" + sound + '\'' +
+            ", translation='" + translation + '\'' +
+            ", schedule='" + schedule + '\'' +
+            '}';
     }
 }

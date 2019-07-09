@@ -305,7 +305,7 @@ public class ShiroConfig {
         // 设置会话验证调度器, 默认使用ExecutorServiceSessionValidationScheduler
         sessionManager.setSessionValidationScheduler(sessionValidationScheduler);
         // 设置自定义的shiro会话的DAO
-//        sessionManager.setSessionDAO(customSessionDao);
+        //        sessionManager.setSessionDAO(customSessionDao);
         // 是否启用SessionIdCookie, 默认启用, 若禁用则不会设置SessionIdCookie, 即默认使用了Servlet容器的JSESSIONID,
         // 且通过URL重写(URL中的“;JSESSIONID=id”部分)保存SessionId
         sessionManager.setSessionIdCookieEnabled(true);

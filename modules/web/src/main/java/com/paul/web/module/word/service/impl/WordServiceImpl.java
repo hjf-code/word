@@ -85,7 +85,7 @@ public class WordServiceImpl extends BaseServiceImpl<WordEntity, WordDao> implem
         }
 
         return super.delete(id).put("schedules", schedules).put("nextWord", nextWord)
-                    .put("totalCount", totalCount);
+            .put("totalCount", totalCount);
     }
 
     @Override
@@ -130,7 +130,7 @@ public class WordServiceImpl extends BaseServiceImpl<WordEntity, WordDao> implem
             totalCount += oneSchedule;
         }
         return super.update(entity).put("schedules", schedules).put("nextWord", nextWord)
-                    .put("totalCount", totalCount);
+            .put("totalCount", totalCount);
     }
 
     @Override
@@ -228,7 +228,7 @@ public class WordServiceImpl extends BaseServiceImpl<WordEntity, WordDao> implem
         }
 
         return R.ok().put("schedules", schedules).put("nextWord", nextWord)
-                .put("totalCount", totalCount);
+            .put("totalCount", totalCount);
     }
 
     @Override

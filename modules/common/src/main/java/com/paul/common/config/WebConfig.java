@@ -42,14 +42,14 @@ public class WebConfig implements WebMvcConfigurer {
         if (allCors) {
             //设置允许跨域的路径
             corsRegistry.addMapping("/**")
-                        //设置允许跨域请求的域名
-                        .allowedOrigins("*")
-                        //是否允许证书 不再默认开启
-                        .allowCredentials(true)
-                        //设置允许的方法
-                        .allowedMethods("*")
-                        //跨域允许时间
-                        .maxAge(3600);
+                //设置允许跨域请求的域名
+                .allowedOrigins("*")
+                //是否允许证书 不再默认开启
+                .allowCredentials(true)
+                //设置允许的方法
+                .allowedMethods("*")
+                //跨域允许时间
+                .maxAge(3600);
         }
     }
 
@@ -74,7 +74,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
 
         resourceHandlerRegistry.addResourceHandler("/**")
-                               .addResourceLocations("classpath:/static/");
+            .addResourceLocations("classpath:/static/");
     }
 
     /**
@@ -99,7 +99,7 @@ public class WebConfig implements WebMvcConfigurer {
         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
         // 消除对同一对象循环引用的问题1
         fastJsonConfig.setSerializerFeatures(SerializerFeature.DisableCircularReferenceDetect,
-                                             SerializerFeature.WriteDateUseDateFormat);
+            SerializerFeature.WriteDateUseDateFormat);
         converter.setFastJsonConfig(fastJsonConfig);
 
         // MappingJacksonHttpMessageConverter会默认设置contentType为application/json,

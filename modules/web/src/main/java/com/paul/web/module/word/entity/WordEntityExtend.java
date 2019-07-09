@@ -9,7 +9,7 @@ import lombok.Data;
  * @since 19-7-5 下午5:56
  */
 @Data
-public class WordEntityExtend extends WordEntity{
+public class WordEntityExtend extends WordEntity {
 
     private static final long serialVersionUID = -8749230700069427434L;
 

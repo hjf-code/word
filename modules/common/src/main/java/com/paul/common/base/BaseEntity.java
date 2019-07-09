@@ -84,15 +84,16 @@ public abstract class BaseEntity implements Serializable {
 
     @Override
     public String toString() {
+
         return "id=" + id +
-               ", remark='" + remark + '\'' +
-               ", createBy='" + createBy + '\'' +
-               ", updateBy='" + updateBy + '\'' +
-               ", createDate=" + createDate +
-               ", updateDate=" + updateDate +
-               ", column1='" + column1 + '\'' +
-               ", column2='" + column2 + '\'' +
-               ", column3='" + column3 + '\'' +
-               ", delFlag=" + delFlag + ", ";
+            ", remark='" + remark + '\'' +
+            ", createBy='" + createBy + '\'' +
+            ", updateBy='" + updateBy + '\'' +
+            ", createDate=" + createDate +
+            ", updateDate=" + updateDate +
+            ", column1='" + column1 + '\'' +
+            ", column2='" + column2 + '\'' +
+            ", column3='" + column3 + '\'' +
+            ", delFlag=" + delFlag + ", ";
     }
 }

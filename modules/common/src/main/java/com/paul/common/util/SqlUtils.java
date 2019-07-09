@@ -203,12 +203,9 @@ public interface SqlUtils {
         }
         StringBuilder sb = new StringBuilder();
         MessageFormat mf =
-            new MessageFormat("(#'{'" + argName + "[{0}]." + toHump(columns).replace("`", "")
-                                                                            .replace(COMMA,
-                                                                                     "}, #'{'" +
-                                                                                     argName +
-                                                                                     "[{0}].") +
-                              "})");
+            new MessageFormat("(#'{'" + argName + "[{0}]." + toHump(columns)
+                .replace("`", "").replace(COMMA, "}, #'{'" +
+                    argName + "[{0}].") + "})");
         for (int i = 0; i < size; i++) {
             sb.append(mf.format(new Object[]{i})).append(COMMA);
         }

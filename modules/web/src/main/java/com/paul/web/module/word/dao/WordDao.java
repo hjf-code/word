@@ -35,8 +35,8 @@ public interface WordDao extends com.paul.common.base.BaseDao<WordEntity> {
         FROM + "`word`",
         WHERE + "`del_flag` = 0",
         AND +
-        "timestampdiff(day, date_format(`start_date`, '%Y-%m-%d'), #{date}) in (0, 1, 2, 4, 7, " +
-        "15, 31, 107)",
+            "timestampdiff(day, date_format(`start_date`, '%Y-%m-%d'), #{date}) in (0, 1, 2, 4, 7, " +
+            "15, 31, 107)",
         GROUP_BY + "`schedule`"
     })
     List<Map<String, Object>> count(P p);
@@ -68,19 +68,19 @@ public interface WordDao extends com.paul.common.base.BaseDao<WordEntity> {
             return new SQL() {{
 
                 SELECT("`word`, " +
-                       " `sound`, " +
-                       " `translation`, " +
-                       " `schedule`, " +
-                       " `start_date`, " +
-                       " `id`, " +
-                       " `remark`" +
-                       ", timestampdiff(day, date_format(`start_date`, '%Y-%m-%d'), " +
-                       "#{date}) AS dayCount");
+                    " `sound`, " +
+                    " `translation`, " +
+                    " `schedule`, " +
+                    " `start_date`, " +
+                    " `id`, " +
+                    " `remark`" +
+                    ", timestampdiff(day, date_format(`start_date`, '%Y-%m-%d'), " +
+                    "#{date}) AS dayCount");
                 FROM(tableName);
                 WHERE(notDeleted());
                 WHERE(
                     "timestampdiff(day, date_format(`start_date`, '%Y-%m-%d'), #{date}) in (0, 1," +
-                    " 2, 4, 7, 15, 31, 107)");
+                        " 2, 4, 7, 15, 31, 107)");
                 ORDER_BY("`start_date` DESC");
             }}.toString();
         }

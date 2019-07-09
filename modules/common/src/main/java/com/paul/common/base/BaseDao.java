@@ -149,27 +149,31 @@ public interface BaseDao<E extends BaseEntity> {
         public String insertBatch(@Param("list") List<E> list) {
 
             return INSERT_INTO + tableName + "(" + insertBatchColumns + ")" + VALUES +
-                   columnsToValueColumnsBatch(insertBatchColumns, list.size());
+                columnsToValueColumnsBatch(insertBatchColumns, list.size());
         }
 
         public String delete(Object id) {
 
             return new SQL() {{
-                UPDATE(tableName); SET(deleted()); WHERE(equalId(id));
+                UPDATE(tableName);
+                SET(deleted());
+                WHERE(equalId(id));
             }}.toString();
         }
 
         public String deleteBatch(@Param("ids") String ids) {
 
             return new SQL() {{
-                UPDATE(tableName); SET(deleted()); WHERE(inIds(ids));
+                UPDATE(tableName);
+                SET(deleted());
+                WHERE(inIds(ids));
             }}.toString();
         }
 
         public String update(E entity) {
 
             return getInsertOrCreateSql(entity, UPDATE, null).WHERE(equalId(entity.getId()))
-                                                             .toString();
+                .toString();
         }
 
         public String updateBatch(@Param("entity") E entity, @Param("ids") String ids) {
@@ -180,14 +184,18 @@ public interface BaseDao<E extends BaseEntity> {
         public String getObject(Object id) {
 
             return new SQL() {{
-                SELECT(selectColumns.toString()); FROM(tableName); WHERE(equalId(id));
+                SELECT(selectColumns.toString());
+                FROM(tableName);
+                WHERE(equalId(id));
             }}.toString();
         }
 
         public String listObjectsByIds(@Param("ids") String ids) {
 
             return new SQL() {{
-                SELECT(selectColumns.toString()); FROM(tableName); WHERE(inIds(ids));
+                SELECT(selectColumns.toString());
+                FROM(tableName);
+                WHERE(inIds(ids));
             }}.toString();
         }
 
@@ -208,16 +216,17 @@ public interface BaseDao<E extends BaseEntity> {
             String className = entityClass.getSimpleName();
             className = className.substring(0, 1).toLowerCase() + className.substring(1);
             // 根据类名获得表名
-            tableName =
-                SqlUtils.toUnderline(className.substring(0, className.lastIndexOf("Entity")))
-                        .toLowerCase();
+            tableName = SqlUtils
+                .toUnderline(className.substring(0, className.lastIndexOf("Entity"))).toLowerCase();
             // 获得BaseEntity.class
             Class<? super E> superclass = entityClass.getSuperclass();
             // 获得类中所有类型的属性, 但不包括父类中的属性
             Field[] declaredFields = entityClass.getDeclaredFields();
             Field[] superDeclaredFields = superclass.getDeclaredFields();
-            fields = new ArrayList<>(); selectColumns = new StringBuilder("`");
-            addFields(declaredFields); addFields(superDeclaredFields);
+            fields = new ArrayList<>();
+            selectColumns = new StringBuilder("`");
+            addFields(declaredFields);
+            addFields(superDeclaredFields);
             StringUtils.removeLastChar(selectColumns, 3).append(" ");
         }
 
@@ -230,7 +239,8 @@ public interface BaseDao<E extends BaseEntity> {
 
             for (Field field : fields) {
                 if (!Objects.equals("serialVersionUID", field.getName())) {
-                    field.setAccessible(true); this.fields.add(field);
+                    field.setAccessible(true);
+                    this.fields.add(field);
                     selectColumns.append(SqlUtils.toUnderline(field.getName())).append("`, `");
                 }
             }
@@ -250,7 +260,8 @@ public interface BaseDao<E extends BaseEntity> {
                     UPDATE(tableName);
                 } else {
                     INSERT_INTO(tableName);
-                } for (Field field : fields) {
+                }
+                for (Field field : fields) {
                     try {
                         // 属性名
                         String fieldName = field.getName();
@@ -262,11 +273,12 @@ public interface BaseDao<E extends BaseEntity> {
                                     "}");
                             } else {
                                 VALUES("`" + SqlUtils.toUnderline(fieldName) + "`",
-                                       "#{" + fieldName + "}");
+                                    "#{" + fieldName + "}");
                             }
                         }
                     } catch (IllegalAccessException e) {
-                        log.error(e.getMessage()); e.printStackTrace();
+                        log.error(e.getMessage());
+                        e.printStackTrace();
                     }
                 }
             }};

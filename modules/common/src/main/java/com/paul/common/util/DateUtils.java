@@ -16,11 +16,12 @@ public class DateUtils {
     /**
      * 按照给定格式转换日期
      *
-     * @param date 日期
+     * @param date    日期
      * @param pattern 日期格式
      * @return java.lang.String
      */
     public static String format(Date date, String pattern) {
+
         if (date == null) {
             return "";
         }

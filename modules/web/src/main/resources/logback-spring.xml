@@ -20,7 +20,7 @@
     -->
     <contextName>SpringBootDemo</contextName>
     <!--设置日志根目录-->
-    <property name="LOG_PATH" value="/home/log"/>
+    <property name="LOG_PATH" value="/home/paul/log"/>
     <!--    <property name="LOG_PATH" value="C:/code/log"/>-->
     <!--设置系统日志目录-->
     <property name="APPDIR" value="word"/>
