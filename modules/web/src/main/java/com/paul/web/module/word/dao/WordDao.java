@@ -56,7 +56,7 @@ public interface WordDao extends com.paul.common.base.BaseDao<WordEntity> {
         FROM,
         "`word`",
         WHERE,
-        "`del_flag = 0`",
+        "`del_flag` = 0 AND ",
         "`word` = #{word}"
     })
     WordEntity getObjectByWord(String word);
